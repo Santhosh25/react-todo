@@ -8,6 +8,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 
 import actions from "../../actions";
 import EditTodo from "../EditTodo";
+import constant from "../../constants/index";
 import {
   Empty,
   IconWrapper,
@@ -25,7 +26,7 @@ const TodoList = () => {
   const todos = useSelector((state) => state.filters.data);
   const actionType = useSelector((state) => state.filters.actionType);
   const dispatch = useDispatch();
-  const itemsPerPage = 5;
+  const itemsPerPage = constant.pageSize;
   const [page, setPage] = useState(1);
   const [noOfPages, setNoOfPages] = useState(0);
   const [open, setOpen] = useState(false);

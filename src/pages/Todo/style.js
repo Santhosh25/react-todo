@@ -8,23 +8,27 @@ export const AppWrapper = styled.div`
   align-items: center;
   margin: 0 auto;
   min-height: 100vh;
-  padding-top: 10px;
-
-  @media (min-width: 1024px) {
-    width: 50%;
-  }
 `;
 
 export const Header = styled.header`
   width: 100%;
   padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 50px;
   position: sticky;
   left: 0;
-  top: 10px;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.3);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  @media (min-width: 600px) {
+    justify-content: center;
+  }
 `;
 
 export const AddTodo = styled.div`
@@ -37,7 +41,7 @@ export const AddTodo = styled.div`
   padding: 0 20px;
 
   @media (min-width: 1024px) {
-    width: 50%;
+    width: 720px;
   }
 `;
 
@@ -54,4 +58,16 @@ export const Section = styled.section`
   background-color: rgba(255, 255, 255, 0.3);
   padding: 20px;
   min-height: 90vh;
+
+  @media (min-width: 1024px) {
+    width: 720px;
+  }
+`;
+
+export const Logo = styled.span`
+  font-size: 24px;
+  position: absolute;
+  left: 15px;
+  color: #fff;
+  font-weight: 700;
 `;

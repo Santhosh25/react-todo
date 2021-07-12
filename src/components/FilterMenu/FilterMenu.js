@@ -22,7 +22,7 @@ const FilterMenu = () => {
   const todos = useSelector((state) => state.todos.data);
   const actionType = useSelector((state) => state.filters.actionType);
   const [anchorEl, setAnchorEl] = useState(null);
-  const [filterValue, setFilterValue] = useState("All");
+  const [filterValue, setFilterValue] = useState("Pending");
   const open = Boolean(anchorEl);
   const dispatch = useDispatch();
 
@@ -43,10 +43,10 @@ const FilterMenu = () => {
 
   useEffect(() => {
     dispatch({
-      type: actions.FILTER_ALL,
+      type: actions.FILTER_PENDING,
       payload: todos,
     });
-    setFilterValue("All");
+    setFilterValue("Pending");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [todos, dispatch]);
 

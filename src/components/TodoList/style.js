@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
 import Paper from "@material-ui/core/Paper";
-import { makeStyles } from '@material-ui/core/styles';
 import Pagination from "@material-ui/lab/Pagination";
 
 import { ReactComponent as nodata } from "../../assets/icon/noData.svg";
