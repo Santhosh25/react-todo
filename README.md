@@ -1,11 +1,11 @@
 # React.js To-do App using javascript
-Simple Todo application for day to day activities.\ 
+Simple Todo application for day to day activities.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Features:\
-1. Searchable.\
-2. Filters based All, Completed, Pending and Archived options.\
-3. Pagination.\
+Features:
+1. Searchable.
+2. Filters based on All, Completed, Pending and Archived options.
+3. Pagination.
 
 ## Available Scripts
 
