@@ -1,0 +1,18 @@
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+  ADD: "ADD",
+  REMOVE: "REMOVE",
+  CLEAR: "CLEAR",
+  TOGGLE: "TOGGLE",
+  ARCHIVE: "ARCHIVE",
+  FILTER_ALL: "FILTER_ALL",
+  EDIT: "EDIT",
+  UPDATED: "UPDATED",
+  FILTER_PENDING: "FILTER_PENDING",
+  FILTER_COMPLETED: "FILTER_COMPLETED",
+  FILTER_ARCHIVED: "FILTER_ARCHIVED",
+  SEARCH: "SEARCH",
+  LIST: "LIST",
+  LIST_ERROR: "LIST_ERROR",
+  LIST_SUCCESS: "LIST_SUCCESS"
+};
