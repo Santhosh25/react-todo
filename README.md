@@ -3,9 +3,12 @@ Simple Todo application for day to day activities.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Features:
-1. Searchable.
-2. Filters based on All, Completed, Pending and Archived options.
-3. Pagination.
+1. Create,modify and delete To-do list
+2. Searchable.
+3. Filters based on All, Completed, Pending and Archived options.
+4. Pagination.
+
+[Demo](https://react-todo-js.web.app/)
 
 ## Available Scripts
 

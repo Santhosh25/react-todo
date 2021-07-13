@@ -20,7 +20,7 @@ export default (state = storedTodos, action) => {
           return Object.assign({}, todo, { isDone: !todo.isDone });
         return todo;
       });
-      localStorage.setItem("todos", JSON.stringify({data: modifiedTodos}));
+      localStorage.setItem("todos", JSON.stringify({ data: modifiedTodos }));
       return { data: modifiedTodos, actionType: action.type };
 
     case actions.ARCHIVE:
@@ -29,8 +29,17 @@ export default (state = storedTodos, action) => {
           return Object.assign({}, todo, { isArchive: !todo.isArchive });
         return todo;
       });
-      localStorage.setItem("todos", JSON.stringify({data: archivedTodos}));
+      localStorage.setItem("todos", JSON.stringify({ data: archivedTodos }));
       return { data: archivedTodos, actionType: action.type };
+
+    case actions.UPDATED:
+      let updated = state.data.map((todo) => {
+        if (todo.id === action.payload.id)
+          return Object.assign({}, todo, { text: action.payload.text });
+        return todo;
+      });
+      localStorage.setItem("todos", JSON.stringify({ data: updated }));
+      return { data: updated, actionType: action.type };
 
     case actions.REMOVE:
       const index = state.data.indexOf(action.payload);
@@ -39,7 +48,7 @@ export default (state = storedTodos, action) => {
       }
       localStorage.setItem("todos", JSON.stringify(state));
       return { data: [...state.data], actionType: action.type };
-    
+
     case actions.CLEAR:
       return { data: [], actionType: action.type };
 

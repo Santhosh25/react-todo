@@ -20,6 +20,7 @@ const ITEM_HEIGHT = 48;
 
 const FilterMenu = () => {
   const todos = useSelector((state) => state.todos.data);
+  const filteredData = useSelector((state) => state.filters);
   const actionType = useSelector((state) => state.filters.actionType);
   const [anchorEl, setAnchorEl] = useState(null);
   const [filterValue, setFilterValue] = useState("Pending");
@@ -41,17 +42,37 @@ const FilterMenu = () => {
     }
   };
 
+  const getKeyByValue = (object, value) => {
+    return Object.keys(object).find((key) => object[key] === value);
+  };
+
   useEffect(() => {
-    dispatch({
-      type: actions.FILTER_PENDING,
-      payload: todos,
-    });
-    setFilterValue("Pending");
+    const value = getKeyByValue(action, actionType);
+    if (value && options.indexOf(value) !== -1) {
+      dispatch({
+        type: actionType || actions.FILTER_PENDING,
+        payload: todos,
+      });
+      setFilterValue(value);
+    } else if (actionType === undefined || actionType === null) {
+      dispatch({
+        type: actions.FILTER_PENDING,
+        payload: todos,
+      });
+      setFilterValue("Pending");
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [todos, dispatch]);
 
   useEffect(() => {
     if (actionType === actions.SEARCH) {
+      dispatch({
+        type: actions.SEARCH,
+        payload: {
+          data: todos,
+          text: filteredData.text
+        },
+      });
       setFilterValue("All");
     }
   }, [actionType]);

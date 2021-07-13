@@ -24,14 +24,6 @@ export default (state = { data: [] }, action) => {
         actionType: action.type,
       };
 
-    case actions.UPDATED:
-      let updated = action.payload.data.map((todo) => {
-        if (todo.id === action.payload.id)
-          return Object.assign({}, todo, { text: action.payload.text });
-        return todo;
-      });
-      localStorage.setItem("todos", JSON.stringify({data: updated}));
-      return { data: updated, actionType: action.type };
 
     case actions.SEARCH:
       if (action.payload.text) {
